@@ -15,7 +15,7 @@ const Swaps = () => {
     const fetchSwaps = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/swaps/my-swaps', {
+        const res = await axios.get('https://rewear-production.up.railway.app/api/swaps/my-swaps', {
           headers: { 'x-auth-token': token }
         });
         setSwaps(res.data);
@@ -32,7 +32,7 @@ const Swaps = () => {
   const handleUpdateStatus = async (swapId, status) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/swaps/${swapId}`, { status }, {
+      await axios.put(`https://rewear-production.up.railway.app/api/swaps/${swapId}`, { status }, {
         headers: { 'x-auth-token': token }
       });
       setSuccess('Swap status updated');
