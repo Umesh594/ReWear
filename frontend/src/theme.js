@@ -3,11 +3,11 @@ import { createTheme } from '@mui/material/styles';
 export default createTheme({
   palette: {
     primary: {
-      main: '#2e7d32', // Green
+      main: '#2e7d32', 
       contrastText: '#fff',
     },
     secondary: {
-      main: '#ff8f00', // Orange
+      main: '#ff8f00',
     },
   },
   typography: {
@@ -27,7 +27,7 @@ export default createTheme({
     },
     MuiCard: {
       defaultProps: {
-        className: 'custom-card', // Connects to CSS
+        className: 'custom-card',
       },
     },
   },
