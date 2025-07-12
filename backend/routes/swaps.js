@@ -5,7 +5,7 @@ const Item = require('../models/Item');
 const User = require('../models/User');
 const router = express.Router();
 
-// Create swap request
+
 router.post('/', auth, async (req, res) => {
   try {
     const { requestedItemId, offeredItemId, pointsOffered } = req.body;
@@ -33,7 +33,7 @@ router.post('/', auth, async (req, res) => {
 
     await swap.save();
     
-    // Update item status if needed
+ 
     if (offeredItem) {
       offeredItem.status = 'pending';
       await offeredItem.save();
@@ -48,7 +48,7 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
-// Get user's swaps
+
 router.get('/my-swaps', auth, async (req, res) => {
   try {
     const swaps = await Swap.find({
@@ -65,7 +65,7 @@ router.get('/my-swaps', auth, async (req, res) => {
   }
 });
 
-// Update swap status
+
 router.put('/:id', auth, async (req, res) => {
   try {
     const { status } = req.body;
@@ -81,7 +81,7 @@ router.put('/:id', auth, async (req, res) => {
     swap.status = status;
     await swap.save();
 
-    // Update item statuses based on swap outcome
+  
     if (status === 'accepted') {
       swap.requestedItem.status = 'swapped';
       await swap.requestedItem.save();
@@ -90,7 +90,7 @@ router.put('/:id', auth, async (req, res) => {
         swap.offeredItem.status = 'swapped';
         await swap.offeredItem.save();
       } else if (swap.pointsOffered > 0) {
-        // Handle points transfer
+     
         const requester = await User.findById(swap.requester);
         const recipient = await User.findById(swap.recipient);
         
