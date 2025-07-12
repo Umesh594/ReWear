@@ -35,4 +35,4 @@ An interactive web platform where users can upload clothing items, browse listin
      -Helmet, CORS, Rate Limiting, Mongo-Sanitize (security)
  - Deployment
      - Frontend is deployed on Netlify : https://resonant-medovik-49c2f9.netlify.app/
-     - Backend is deployed on Railway : https://rewear-production.up.railway.app. It should be used with /items
+     - Backend is deployed on Railway : https://rewear-production.up.railway.app. It should be used with /api/items
