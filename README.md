@@ -33,3 +33,5 @@ An interactive web platform where users can upload clothing items, browse listin
      -MongoDB with Mongoose
      -Multer (image upload)
      -Helmet, CORS, Rate Limiting, Mongo-Sanitize (security)
+ - Deployment
+     - Frontend is deployed on Netlify : https://resonant-medovik-49c2f9.netlify.app/
