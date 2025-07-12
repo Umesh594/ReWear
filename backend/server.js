@@ -14,7 +14,7 @@ const app = express();
 
 app.use(helmet());
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:3000', 'https://resonant-medovik-49c2f9.netlify.app'
   credentials: true, 
 };
 app.use(cors(corsOptions));
