@@ -47,7 +47,7 @@ const AddItem = () => {
       });
 
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/items', formData, {
+      const res = await axios.post('https://rewear-production.up.railway.app/api/items', formData, {
         headers: {
           'x-auth-token': token,
           'Content-Type': 'multipart/form-data',
