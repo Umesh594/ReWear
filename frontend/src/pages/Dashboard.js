@@ -14,7 +14,7 @@ const Dashboard = () => {
     const fetchItems = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/items/my-items', {
+        const res = await axios.get('https://rewear-production.up.railway.app/api/items/my-items', {
           headers: { 'x-auth-token': token }
         });
         setItems(res.data);
@@ -51,7 +51,7 @@ const Dashboard = () => {
                   <CardMedia
                     component="img"
                     height="200"
-                    image={`http://localhost:5000/${item.images[0]}`}
+                    image={`https://rewear-production.up.railway.app/${item.images[0]}`}
                     alt={item.title}
                   />
                 )}
