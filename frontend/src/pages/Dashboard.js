@@ -51,7 +51,7 @@ const Dashboard = () => {
                   <CardMedia
                     component="img"
                     height="200"
-                    image={`https://renewed-laughter-production.up.railway.app/${item.images[0]}`}
+                    image={`https://astonishing-enchantment-production.up.railway.app/${item.images[0]}`}
                     alt={item.title}
                   />
                 )}
