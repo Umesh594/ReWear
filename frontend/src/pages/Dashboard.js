@@ -14,7 +14,7 @@ const Dashboard = () => {
     const fetchItems = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('https://renewed-laughter-production.up.railway.app/api/items/my-items', {
+        const res = await axios.get('https://astonishing-enchantment-production.up.railway.app/api/items/my-items', {
           headers: { 'x-auth-token': token }
         });
         setItems(res.data);
