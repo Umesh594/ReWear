@@ -10,7 +10,7 @@ const Items = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/items');
+        const res = await axios.get('https://rewear-production.up.railway.app/api/items');
         setItems(res.data);
       } catch (error) {
         console.error(error);
@@ -37,7 +37,7 @@ const Items = () => {
                 <CardMedia
                   component="img"
                   height="200"
-                  image={`http://localhost:5000/${item.images[0]}`}
+                  image={`https://rewear-production.up.railway.app/${item.images[0]}`}
                   alt={item.title}
                 />
               )}
