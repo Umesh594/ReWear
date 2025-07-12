@@ -3,11 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const router = express.Router();
-const auth = require('../middleware/auth'); // Make sure this is at the top if not already
-
-// @route    GET /api/auth/user
-// @desc     Get user data
-// @access   Private
+const auth = require('../middleware/auth'); 
 router.get('/user', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -18,12 +14,12 @@ router.get('/user', auth, async (req, res) => {
   }
 });
 
-// Register
+
 router.post('/register', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // Check if user already exists
+   
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists. Please login instead.' });
@@ -50,12 +46,11 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login
+
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Include password explicitly because of select: false in schema
     const user = await User.findOne({ email }).select('+password');
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
@@ -84,7 +79,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Get current user
+
 router.get('/me', async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
