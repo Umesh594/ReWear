@@ -11,33 +11,33 @@ const swapRoutes = require('./routes/swaps');
 
 const app = express();
 
-// Security Middleware
+
 app.use(helmet());
 const corsOptions = {
   origin: 'http://localhost:3000',
-  credentials: true, // if you're using cookies or auth headers
+  credentials: true, 
 };
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '10kb' }));
 app.use(mongoSanitize());
 app.use('/uploads', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Or use http://localhost:3000
+  res.header('Access-Control-Allow-Origin', '*'); 
   next();
 }, express.static('uploads'));
 
-// Rate limiting
+
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100 
 });
 app.use('/api/', limiter);
 
-// Routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
 app.use('/api/swaps', swapRoutes);
 
-// MongoDB Connection
+
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
