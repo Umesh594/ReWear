@@ -13,11 +13,7 @@ const app = express();
 
 
 app.use(helmet());
-const corsOptions = {
-  origin: ['http://localhost:3000', 'https://resonant-medovik-49c2f9.netlify.app'],
-  credentials: true, 
-};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json({ limit: '10kb' }));
 app.use(mongoSanitize());
 app.use('/uploads', (req, res, next) => {
