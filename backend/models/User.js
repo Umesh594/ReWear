@@ -37,17 +37,16 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-// Indexes
+
 UserSchema.index({ email: 1 }, { unique: true });
 
-// Document middleware
+
 UserSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 12);
   next();
 });
 
-// Method to compare passwords
 UserSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
   return await bcrypt.compare(candidatePassword, userPassword);
 };
