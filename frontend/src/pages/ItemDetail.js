@@ -19,7 +19,7 @@ const ItemDetail = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/items/${id}`);
+        const res = await axios.get(`https://rewear-production.up.railway.app/api/items/${id}`);
         setItem(res.data);
       } catch (error) {
         setError('Failed to fetch item details');
@@ -34,7 +34,7 @@ const ItemDetail = () => {
   const handleSwapRequest = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/swaps', {
+      await axios.post('https://rewear-production.up.railway.app/api/swaps', {
         requestedItemId: item._id,
         offeredItemId: selectedItem || undefined,
         pointsOffered: pointsOffered || undefined
@@ -62,7 +62,7 @@ const ItemDetail = () => {
               <CardMedia
                 component="img"
                 height="500"
-                image={`http://localhost:5000/${item.images[0]}`}
+                image={`https://rewear-production.up.railway.app/${item.images[0]}`}
                 alt={item.title}
               />
             </Card>
