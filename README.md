@@ -34,5 +34,5 @@ An interactive web platform where users can upload clothing items, browse listin
      -Multer (image upload)
      -Helmet, CORS, Rate Limiting, Mongo-Sanitize (security)
  - Deployment
-     - Frontend is deployed on Netlify : https://resonant-medovik-49c2f9.netlify.app/
+     - Frontend is deployed on Netlify : https://astonishing-cucurucho-1b0594.netlify.app/
      - Backend is deployed on Railway : https://astonishing-enchantment-production.up.railway.app/ - It should be used with api/items
