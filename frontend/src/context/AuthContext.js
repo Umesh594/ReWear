@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
           return;
         }
 
-        const res = await axios.get('http://localhost:5000/api/auth/user', {
+        const res = await axios.get('https://rewear-production.up.railway.app/api/auth/user', {
           headers: { 'x-auth-token': token }
         });
         setUser(res.data);
