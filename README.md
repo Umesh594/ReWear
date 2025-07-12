@@ -1,0 +1,38 @@
+# ReWear – Clothing Swap Platform
+An interactive web platform where users can upload clothing items, browse listings, and swap using points or other items. Built using React.js, Node.js, Express.js, and MongoDB.
+-Features
+-User Authentication
+  -Register and login with JWT-based authentication
+  -Secure password hashing (bcrypt)
+-Item Management
+  -Upload items with images, title, category, condition, size, and tags
+  -View all available items
+  -Manage your own items
+  -Image upload handled via multer
+- Swap System
+ -Request swaps by offering:
+  -Your own listed item OR
+  -Points
+ -Accept or reject incoming swap requests
+  -Realtime status updates (pending, accepted, rejected, completed)
+  -Points automatically transferred on accepted swap
+- File Upload & Display
+  -Upload and serve item images (stored in /uploads) 
+  -Display images on item detail and listings
+- Tech Stack Used
+  - Frontend
+    -Javascript
+    -React Router DOM
+    -Axios
+    -Material UI (MUI)
+    -HTML
+    -CSS
+ - Backend
+     -Node.js
+     -Express.js
+     -MongoDB with Mongoose
+     -Multer (image upload)
+     -Helmet, CORS, Rate Limiting, Mongo-Sanitize (security)
+ - Deployment
+     - Frontend is deployed on Netlify : https://resonant-medovik-49c2f9.netlify.app/
+     - Backend is deployed on Railway : https://astonishing-enchantment-production.up.railway.app/ - It should be used with api/items
