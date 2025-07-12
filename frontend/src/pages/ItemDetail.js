@@ -110,7 +110,7 @@ const ItemDetail = () => {
               <Typography variant="body2" sx={{ mb: 2 }}>
                 Or select one of your items to offer in exchange
               </Typography>
-              {/* In a real app, you would fetch and display the user's items here */}
+              
               <Button
                 variant="contained"
                 color="primary"
