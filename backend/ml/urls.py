@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-
 urlpatterns = [
     path("recommend/", views.recommend_items, name="recommend-items"),
     path("detect-tags/", views.detect_tags, name="detect-tags"),
